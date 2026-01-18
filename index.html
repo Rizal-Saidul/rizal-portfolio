@@ -1,175 +1,298 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rizal Portofolio</title>
-
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizal Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
+    
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              deep: "#0f172a",
-              card: "#1e293b",
-              highlight: "#38bdf8",
-            },
-            animation: {
-              "bounce-slow": "bounce 3s infinite",
-            },
-          },
-        },
-      };
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        deep: '#0B1120',       // Background paling gelap
+                        card: '#1e293b',       // Slate 800 (Warna kartu)
+                        cardhover: '#334155',  // Slate 700 (Hover kartu)
+                        accent: '#38bdf8',     // Sky 400 (Warna Utama/Glow)
+                        secondary: '#818cf8',  // Indigo 400 (Warna Sekunder)
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
     </script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code&display=swap" rel="stylesheet">
+    
     <style>
-      .cursor::after {
-        content: "|";
-        animation: blink 1s step-start infinite;
-      }
-      @keyframes blink {
-        50% {
-          opacity: 0;
+        body { font-family: 'Inter', sans-serif; }
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-      }
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B1120; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
     </style>
-  </head>
-  <body
-    class="bg-gradient-to-br from-deep via-[#111827] to-[#0B1120] text-gray-200 min-h-screen flex flex-col items-center justify-center p-4"
-  >
-    <main class="max-w-2xl w-full text-center space-y-8">
-      <div
-        class="inline-block px-4 py-1.5 rounded-full border border-highlight/30 bg-highlight/10 text-highlight text-sm font-medium animate-pulse"
-      >
-        🚀 Segera Hadir
-      </div>
+</head>
+<body class="bg-deep text-slate-300 min-h-screen selection:bg-accent selection:text-deep overflow-x-hidden">
 
-      <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-white">
-        Membangun Sesuatu <br />
-        <span
-          class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400"
-        >
-          Yang Skalabel.
-        </span>
-      </h1>
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob"></div>
+        <div class="absolute top-0 right-1/4 w-96 h-96 bg-secondary/10 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+    </div>
 
-      <div class="h-8 text-xl md:text-2xl text-gray-400 font-mono">
-        Fokus pada:
-        <span id="typing-text" class="text-white font-semibold cursor"></span>
-      </div>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 py-10 md:py-20 space-y-20">
 
-      <p class="text-gray-400 max-w-lg mx-auto leading-relaxed">
-        Halo! Saya sedang menyiapkan portofolio untuk menampilkan project
-        Backend dan Web3 saya. Cek kembali nanti untuk melihat studi kasus
-        lengkapnya.
-      </p>
+        <header class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[500px]">
+            
+            <div class="glass rounded-3xl p-6 md:col-span-1 md:row-span-2 flex flex-col items-center justify-center text-center group transition hover:border-accent/30">
+                <div class="relative w-32 h-32 md:w-40 md:h-40 mb-6">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-accent to-secondary rounded-full animate-pulse opacity-75 blur-md"></div>
+                    <img src="/photo-profile.png" alt="Profile" class="relative w-full h-full rounded-full border-4 border-card object-cover bg-slate-800">
+                </div>
+                <h1 class="text-2xl font-bold text-white">Saidul Rizal</h1>
+                <p class="text-sm text-accent mt-1">@rizalsaidul</p>
+                <div class="mt-6 flex gap-3">
+                    <a href="https://github.com/Rizal-Saidul" class="p-2 rounded-full bg-slate-800 hover:bg-accent hover:text-deep transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                    <a href="linkedin.com/in/muhamad-saidul-rizal" class="p-2 rounded-full bg-slate-800 hover:bg-accent hover:text-deep transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                </div>
+            </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-        <a
-          href="https://github.com/rizal-saidul"
-          target="_blank"
-          class="group block p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-highlight/50 hover:bg-white/10 transition-all duration-300"
-        >
-          <div class="flex items-center justify-between">
-            <span
-              class="text-lg font-semibold text-white group-hover:text-highlight"
-              >GitHub Profile</span
-            >
-            <svg
-              class="w-5 h-5 text-gray-400 group-hover:text-white transform group-hover:translate-x-1 transition"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              ></path>
-            </svg>
-          </div>
-          <p class="text-sm text-gray-400 mt-2 text-left">
-            Lihat source code project Backend & frontend saya.
-          </p>
-        </a>
+            <div class="glass rounded-3xl p-8 md:col-span-2 md:row-span-1 flex flex-col justify-center relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                    <svg class="w-24 h-24 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                </div>
+                
+                <h2 class="text-xs font-bold tracking-widest text-accent uppercase mb-3">About Me</h2>
+                
+                <p class="text-slate-300 text-sm md:text-[15px] leading-relaxed">
+                    I work on modern web applications across multiple layers, focusing on application interfaces and user-facing logic using <span class="text-white font-semibold">JavaScript</span> and <span class="text-white font-semibold">TypeScript</span>. 
+                    <br><br>
+                    For core services and system-level components, I rely on <span class="text-accent font-semibold">Rust</span> to deliver performance, safety, and long-term reliability. My approach emphasizes <span class="text-white">clean architecture</span> and engineering decisions that scale.
+                </p>
+            </div>
 
-        <a
-          href="mailto:muhamadsaidulrizal@gmail.com"
-          class="group block p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-highlight/50 hover:bg-white/10 transition-all duration-300"
-        >
-          <div class="flex items-center justify-between">
-            <span
-              class="text-lg font-semibold text-white group-hover:text-highlight"
-              >Hubungi Saya</span
-            >
-            <svg
-              class="w-5 h-5 text-gray-400 group-hover:text-white transform group-hover:translate-x-1 transition"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              ></path>
-            </svg>
-          </div>
-          <p class="text-sm text-gray-400 mt-2 text-left">
-            Terbuka untuk kolaborasi dan diskusi project Backend.
-          </p>
-        </a>
-      </div>
-    </main>
+            <div class="glass rounded-3xl p-6 flex flex-col justify-between group hover:bg-slate-800 transition">
+                <div class="flex justify-between items-start">
+                    <div class="p-2 bg-secondary/10 rounded-lg text-secondary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <span class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Goal</span>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-bold text-white group-hover:text-accent transition">Junior<br>Programmer</h4>
+                    <p class="text-xs text-slate-400 mt-1">Full stack software engineer</p>
+                </div>
+            </div>
 
-    <footer class="mt-16 text-gray-600 text-sm">
-      &copy; 2026 to Software Engineer. Dibuat dengan HTML & Tailwind.
-    </footer>
+            <div class="glass rounded-3xl p-6 md:col-span-3 flex flex-col justify-center">
+                <h4 class="text-sm text-slate-400 mb-4">Core Technologies</h4>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 text-accent text-sm font-mono hover:border-accent transition cursor-default">Rust 🦀</span>
+                    <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 text-blue-400 text-sm font-mono hover:border-blue-400 transition cursor-default">TypeScript</span>
+                    <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm font-mono hover:border-white transition cursor-default">JavaScript</span>
+                    <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 text-green-400 text-sm font-mono hover:border-green-400 transition cursor-default">Node.js</span>
+                    <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 text-purple-400 text-sm font-mono hover:border-purple-400 transition cursor-default">Axum</span>
+                    <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 text-purple-400 text-sm font-mono hover:border-purple-400 transition cursor-default">Docker</span>
+                    <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 text-purple-400 text-sm font-mono hover:border-purple-400 transition cursor-default">Redis</span>
+                    <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 text-purple-400 text-sm font-mono hover:border-purple-400 transition cursor-default">Express.js</span>
+                    <span class="px-4 py-2 rounded-lg bg-slate-900 border border-slate-700 text-yellow-400 text-sm font-mono hover:border-yellow-400 transition cursor-default">PostgreSQL</span>
+                </div>
+            </div>
+        </header>
+
+        <main id="projects">
+            
+            <div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2">My Projects</h2>
+                    <p class="text-slate-400">Selected repositories from GitHub.</p>
+                </div>
+
+                <div class="bg-slate-800 p-1 rounded-xl flex gap-1">
+                    <button onclick="switchTab('backend')" id="btn-backend" class="px-6 py-2 rounded-lg text-sm font-medium bg-accent text-deep shadow-lg transition-all">
+                        Backend & Systems
+                    </button>
+                    <button onclick="switchTab('frontend')" id="btn-frontend" class="px-6 py-2 rounded-lg text-sm font-medium text-slate-400 hover:text-white transition-all">
+                        Frontend & Web3
+                    </button>
+                </div>
+            </div>
+
+            <div id="backend-panel" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+                
+                <article class="group relative bg-card rounded-2xl overflow-hidden border border-slate-700 hover:border-accent/50 transition duration-300 hover:-translate-y-1">
+                    <div class="h-40 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center relative overflow-hidden">
+                        <span class="text-6xl opacity-10 font-bold select-none">API</span>
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white group-hover:text-accent transition">URL Shortener</h3>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-orange-400">Rust</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-6 h-10 line-clamp-2">High-performance URL shortening service built with Axum and Redis.</p>
+                        
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
+                            <div class="flex gap-4 text-xs text-slate-500">
+                                <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg> 12</span>
+                                <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 5.5l5 4.5-5 4.5v-9z"/></svg> 4</span>
+                            </div>
+                            <a href="#" class="text-xs font-bold text-white bg-slate-700 px-3 py-1 rounded-full hover:bg-white hover:text-black transition">View Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group relative bg-card rounded-2xl overflow-hidden border border-slate-700 hover:border-accent/50 transition duration-300 hover:-translate-y-1">
+                    <div class="h-40 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center relative overflow-hidden">
+                        <span class="text-6xl opacity-10 font-bold select-none">CLI</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white group-hover:text-accent transition">Task Manager CLI</h3>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-orange-400">Rust</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-6 h-10 line-clamp-2">Terminal-based productivity tool utilizing Clap for argument parsing.</p>
+                        
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
+                            <div class="flex gap-4 text-xs text-slate-500">
+                                <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg> 8</span>
+                                <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 5.5l5 4.5-5 4.5v-9z"/></svg> 2</span>
+                            </div>
+                            <a href="#" class="text-xs font-bold text-white bg-slate-700 px-3 py-1 rounded-full hover:bg-white hover:text-black transition">View Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                 <article class="group relative bg-card rounded-2xl overflow-hidden border border-slate-700 hover:border-accent/50 transition duration-300 hover:-translate-y-1">
+                    <div class="h-40 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center relative overflow-hidden">
+                        <span class="text-6xl opacity-10 font-bold select-none">SQL</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white group-hover:text-accent transition">Split Bill API</h3>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-green-400">Node.js</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-6 h-10 line-clamp-2">Financial backend with complex logic for splitting bills.</p>
+                        
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
+                            <div class="flex gap-4 text-xs text-slate-500">
+                                <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg> 5</span>
+                            </div>
+                            <a href="#" class="text-xs font-bold text-white bg-slate-700 px-3 py-1 rounded-full hover:bg-white hover:text-black transition">View Code</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <div id="frontend-panel" class="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+                
+                <article class="group relative bg-card rounded-2xl overflow-hidden border border-slate-700 hover:border-secondary/50 transition duration-300 hover:-translate-y-1">
+                    <div class="h-40 bg-gradient-to-br from-indigo-900 to-slate-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white group-hover:text-secondary transition">Sistem Desa</h3>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-blue-400">React</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-6 h-10 line-clamp-2">Comprehensive Village Information System dashboard.</p>
+                        
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
+                            <div class="flex gap-2">
+                                <span class="px-2 py-1 rounded text-[10px] bg-slate-800 border border-slate-600">Tailwind</span>
+                                <span class="px-2 py-1 rounded text-[10px] bg-slate-800 border border-slate-600">Vite</span>
+                            </div>
+                            <a href="#" class="text-xs font-bold text-white bg-slate-700 px-3 py-1 rounded-full hover:bg-white hover:text-black transition">Live Demo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group relative bg-card rounded-2xl overflow-hidden border border-slate-700 hover:border-secondary/50 transition duration-300 hover:-translate-y-1">
+                    <div class="h-40 bg-gradient-to-br from-indigo-900 to-slate-800 flex items-center justify-center relative overflow-hidden">
+                         <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-white group-hover:text-secondary transition">Solana Wallet View</h3>
+                            <span class="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-purple-400">Web3</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-6 h-10 line-clamp-2">Simple dApp to view wallet balance and latest transactions.</p>
+                        
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
+                            <div class="flex gap-2">
+                                <span class="px-2 py-1 rounded text-[10px] bg-slate-800 border border-slate-600">Web3.js</span>
+                            </div>
+                            <a href="#" class="text-xs font-bold text-white bg-slate-700 px-3 py-1 rounded-full hover:bg-white hover:text-black transition">Live Demo</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </main>
+
+        <footer class="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
+            <p>&copy; 2026 Your Name. Built with Tailwind CSS & Coffee.</p>
+        </footer>
+
+    </div>
 
     <script>
-      const textElement = document.getElementById("typing-text");
-      const phrases = [
-        "Node.js Backend Development",
-        "React Frontend Development",
-        "Rust System Programming",
-        "Scalable Backend APIs",
-      ];
+        function switchTab(tab) {
+            const backendPanel = document.getElementById('backend-panel');
+            const frontendPanel = document.getElementById('frontend-panel');
+            const btnBackend = document.getElementById('btn-backend');
+            const btnFrontend = document.getElementById('btn-frontend');
 
-      let phraseIndex = 0;
-      let charIndex = 0;
-      let isDeleting = false;
-      let typeSpeed = 100;
+            if (tab === 'backend') {
+                // Show Backend
+                backendPanel.classList.remove('hidden');
+                backendPanel.classList.add('grid');
+                frontendPanel.classList.add('hidden');
+                frontendPanel.classList.remove('grid');
 
-      function type() {
-        const currentPhrase = phrases[phraseIndex];
+                // Style Buttons
+                btnBackend.classList.add('bg-accent', 'text-deep', 'shadow-lg');
+                btnBackend.classList.remove('text-slate-400', 'hover:text-white');
+                
+                btnFrontend.classList.remove('bg-accent', 'text-deep', 'shadow-lg');
+                btnFrontend.classList.add('text-slate-400', 'hover:text-white');
+            } else {
+                // Show Frontend
+                frontendPanel.classList.remove('hidden');
+                frontendPanel.classList.add('grid');
+                backendPanel.classList.add('hidden');
+                backendPanel.classList.remove('grid');
 
-        if (isDeleting) {
-          textElement.textContent = currentPhrase.substring(0, charIndex - 1);
-          charIndex--;
-          typeSpeed = 50;
-        } else {
-          textElement.textContent = currentPhrase.substring(0, charIndex + 1);
-          charIndex++;
-          typeSpeed = 100;
+                // Style Buttons
+                btnFrontend.classList.add('bg-accent', 'text-deep', 'shadow-lg');
+                btnFrontend.classList.remove('text-slate-400', 'hover:text-white');
+                
+                btnBackend.classList.remove('bg-accent', 'text-deep', 'shadow-lg');
+                btnBackend.classList.add('text-slate-400', 'hover:text-white');
+            }
         }
-
-        if (!isDeleting && charIndex === currentPhrase.length) {
-          isDeleting = true;
-          typeSpeed = 2000; 
-        } else if (isDeleting && charIndex === 0) {
-          isDeleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-          typeSpeed = 500;
-        }
-
-        setTimeout(type, typeSpeed);
-      }
-
-      document.addEventListener("DOMContentLoaded", type);
     </script>
-  </body>
+</body>
 </html>
