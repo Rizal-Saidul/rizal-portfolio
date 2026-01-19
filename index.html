@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rizal Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -12,18 +13,18 @@
             theme: {
                 extend: {
                     colors: {
-                        deep: '#0B1120',       // Background paling gelap
-                        card: '#1e293b',       // Slate 800 (Warna kartu)
-                        cardhover: '#334155',  // Slate 700 (Hover kartu)
-                        accent: '#38bdf8',     // Sky 400 (Warna Utama/Glow)
-                        secondary: '#818cf8',  // Indigo 400 (Warna Sekunder)
+                        deep: '#0B1120',
+                        card: '#1e293b',
+                        cardhover: '#334155',
+                        accent: '#38bdf8',
+                        secondary: '#818cf8',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         mono: ['Fira Code', 'monospace'],
                     },
                     animation: {
-                        'blob': 'blob 7s infinite',
+                        blob: 'blob 7s infinite',
                     },
                     keyframes: {
                         blob: {
@@ -37,34 +38,52 @@
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
         .glass {
             background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        /* Hide scrollbar for clean look */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0B1120; }
-        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0B1120;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #38bdf8;
+        }
     </style>
 </head>
 <body class="bg-deep text-slate-300 min-h-screen selection:bg-accent selection:text-deep overflow-x-hidden">
 
+    <!-- Background Gradient Elements -->
     <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob"></div>
         <div class="absolute top-0 right-1/4 w-96 h-96 bg-secondary/10 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
     </div>
 
+    <!-- Main Container -->
     <div class="relative z-10 max-w-6xl mx-auto px-4 py-10 md:py-20 space-y-20">
 
+        <!-- Header Section -->
         <header class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[500px]">
             
+            <!-- Profile Card -->
             <div class="glass rounded-3xl p-6 md:col-span-1 md:row-span-2 flex flex-col items-center justify-center text-center group transition hover:border-accent/30">
                 <div class="relative w-32 h-32 md:w-40 md:h-40 mb-6">
                     <div class="absolute inset-0 bg-gradient-to-tr from-accent to-secondary rounded-full animate-pulse opacity-75 blur-md"></div>
@@ -73,18 +92,21 @@
                 <h1 class="text-2xl font-bold text-white">Saidul Rizal</h1>
                 <p class="text-sm text-accent mt-1">@rizalsaidul</p>
                 <div class="mt-6 flex gap-3">
-                    <a href="https://github.com/Rizal-Saidul" class="p-2 rounded-full bg-slate-800 hover:bg-accent hover:text-deep transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-                    <a href="linkedin.com/in/muhamad-saidul-rizal" class="p-2 rounded-full bg-slate-800 hover:bg-accent hover:text-deep transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                    <a href="https://github.com/Rizal-Saidul" class="p-2 rounded-full bg-slate-800 hover:bg-accent hover:text-deep transition" aria-label="GitHub">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/muhamad-saidul-rizal" class="p-2 rounded-full bg-slate-800 hover:bg-accent hover:text-deep transition" aria-label="LinkedIn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
                 </div>
             </div>
 
+            <!-- About Card -->
             <div class="glass rounded-3xl p-8 md:col-span-2 md:row-span-1 flex flex-col justify-center relative overflow-hidden group">
                 <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
                     <svg class="w-24 h-24 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                 </div>
-                
                 <h2 class="text-xs font-bold tracking-widest text-accent uppercase mb-3">About Me</h2>
-                
                 <p class="text-slate-300 text-sm md:text-[15px] leading-relaxed">
                     I work on modern web applications across multiple layers, focusing on application interfaces and user-facing logic using <span class="text-white font-semibold">JavaScript</span> and <span class="text-white font-semibold">TypeScript</span>. 
                     <br><br>
@@ -92,6 +114,7 @@
                 </p>
             </div>
 
+            <!-- Goal Card -->
             <div class="glass rounded-3xl p-6 flex flex-col justify-between group hover:bg-slate-800 transition">
                 <div class="flex justify-between items-start">
                     <div class="p-2 bg-secondary/10 rounded-lg text-secondary">
@@ -105,6 +128,7 @@
                 </div>
             </div>
 
+            <!-- Tech Stack Card -->
             <div class="glass rounded-3xl p-6 md:col-span-3 flex flex-col justify-center">
                 <h4 class="text-sm text-slate-400 mb-4">Core Technologies</h4>
                 <div class="flex flex-wrap gap-3">
@@ -121,8 +145,10 @@
             </div>
         </header>
 
+        <!-- Projects Section -->
         <main id="projects">
             
+            <!-- Section Header -->
             <div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
                 <div>
                     <h2 class="text-3xl font-bold text-white mb-2">My Projects</h2>
@@ -139,126 +165,144 @@
                 </div>
             </div>
 
-            <div id="backend-panel" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
-                
-                <article class="group relative bg-card rounded-2xl overflow-hidden border border-slate-700 hover:border-accent/50 transition duration-300 hover:-translate-y-1">
-                    <div class="h-40 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center relative overflow-hidden">
-                        <span class="text-6xl opacity-10 font-bold select-none">API</span>
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-bold text-white group-hover:text-accent transition">URL Shortener</h3>
-                            <span class="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-orange-400">Rust</span>
-                        </div>
-                        <p class="text-slate-400 text-sm mb-6 h-10 line-clamp-2">High-performance URL shortening service built with Axum and Redis.</p>
-                        
-                        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
-                            <div class="flex gap-4 text-xs text-slate-500">
-                                <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg> 12</span>
-                                <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 5.5l5 4.5-5 4.5v-9z"/></svg> 4</span>
-                            </div>
-                            <a href="#" class="text-xs font-bold text-white bg-slate-700 px-3 py-1 rounded-full hover:bg-white hover:text-black transition">View Code</a>
-                        </div>
-                    </div>
-                </article>
+            <!-- Backend Projects Panel -->
+            <div id="backend-panel" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
-                <article class="group relative bg-card rounded-2xl overflow-hidden border border-slate-700 hover:border-accent/50 transition duration-300 hover:-translate-y-1">
-                    <div class="h-40 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center relative overflow-hidden">
-                        <span class="text-6xl opacity-10 font-bold select-none">CLI</span>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-bold text-white group-hover:text-accent transition">Task Manager CLI</h3>
-                            <span class="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-orange-400">Rust</span>
-                        </div>
-                        <p class="text-slate-400 text-sm mb-6 h-10 line-clamp-2">Terminal-based productivity tool utilizing Clap for argument parsing.</p>
-                        
-                        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
-                            <div class="flex gap-4 text-xs text-slate-500">
-                                <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg> 8</span>
-                                <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 5.5l5 4.5-5 4.5v-9z"/></svg> 2</span>
-                            </div>
-                            <a href="#" class="text-xs font-bold text-white bg-slate-700 px-3 py-1 rounded-full hover:bg-white hover:text-black transition">View Code</a>
-                        </div>
-                    </div>
-                </article>
-
-                 <article class="group relative bg-card rounded-2xl overflow-hidden border border-slate-700 hover:border-accent/50 transition duration-300 hover:-translate-y-1">
-                    <div class="h-40 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center relative overflow-hidden">
-                        <span class="text-6xl opacity-10 font-bold select-none">SQL</span>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-bold text-white group-hover:text-accent transition">Split Bill API</h3>
-                            <span class="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-green-400">Node.js</span>
-                        </div>
-                        <p class="text-slate-400 text-sm mb-6 h-10 line-clamp-2">Financial backend with complex logic for splitting bills.</p>
-                        
-                        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
-                            <div class="flex gap-4 text-xs text-slate-500">
-                                <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg> 5</span>
-                            </div>
-                            <a href="#" class="text-xs font-bold text-white bg-slate-700 px-3 py-1 rounded-full hover:bg-white hover:text-black transition">View Code</a>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-
-            <div id="frontend-panel" class="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
-                
-                <article class="group relative bg-card rounded-2xl overflow-hidden border border-slate-700 hover:border-secondary/50 transition duration-300 hover:-translate-y-1">
-                    <div class="h-40 bg-gradient-to-br from-indigo-900 to-slate-800 flex items-center justify-center relative overflow-hidden">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-bold text-white group-hover:text-secondary transition">Sistem Desa</h3>
-                            <span class="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-blue-400">React</span>
-                        </div>
-                        <p class="text-slate-400 text-sm mb-6 h-10 line-clamp-2">Comprehensive Village Information System dashboard.</p>
-                        
-                        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
-                            <div class="flex gap-2">
-                                <span class="px-2 py-1 rounded text-[10px] bg-slate-800 border border-slate-600">Tailwind</span>
-                                <span class="px-2 py-1 rounded text-[10px] bg-slate-800 border border-slate-600">Vite</span>
-                            </div>
-                            <a href="#" class="text-xs font-bold text-white bg-slate-700 px-3 py-1 rounded-full hover:bg-white hover:text-black transition">Live Demo</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="group relative bg-card rounded-2xl overflow-hidden border border-slate-700 hover:border-secondary/50 transition duration-300 hover:-translate-y-1">
-                    <div class="h-40 bg-gradient-to-br from-indigo-900 to-slate-800 flex items-center justify-center relative overflow-hidden">
-                         <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition"></div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-bold text-white group-hover:text-secondary transition">Solana Wallet View</h3>
-                            <span class="text-xs font-mono px-2 py-1 rounded bg-slate-900 text-purple-400">Web3</span>
-                        </div>
-                        <p class="text-slate-400 text-sm mb-6 h-10 line-clamp-2">Simple dApp to view wallet balance and latest transactions.</p>
-                        
-                        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
-                            <div class="flex gap-2">
-                                <span class="px-2 py-1 rounded text-[10px] bg-slate-800 border border-slate-600">Web3.js</span>
-                            </div>
-                            <a href="#" class="text-xs font-bold text-white bg-slate-700 px-3 py-1 rounded-full hover:bg-white hover:text-black transition">Live Demo</a>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
+            <!-- Frontend Projects Panel -->
+            <div id="frontend-panel" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </main>
 
+        <!-- Footer -->
         <footer class="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
-            <p>&copy; 2026 Your Name. Built with Tailwind CSS & Coffee.</p>
+            <p>&copy; 2026 Saidul Rizal. Built with Tailwind CSS & Coffee.</p>
         </footer>
 
     </div>
 
     <script>
+        // Data Projects
+        const projectsData = {
+            backend: [
+                {
+                    id: 1,
+                    title: 'URL Shortener',
+                    description: 'URL shortener API built with Rust and Axum.',
+                    tech: { name: 'Rust', color: 'text-orange-400' },
+                    badge: 'API',
+                    stats: { stars: '0', forks: '0' },
+                    link: 'https://github.com/Rizal-Saidul/rust-shortener',
+                    borderColor: 'hover:border-accent/50',
+                    hoverColor: 'group-hover:text-accent'
+                },
+                {
+                    id: 2,
+                    title: 'Bookshelf API',
+                    description: 'API for managing books with CRUD operations.',
+                    tech: { name: 'Javascript', color: 'text-yellow-400' },
+                    badge: 'API',
+                    stats: { stars: '0', forks: '0' },
+                    link: 'https://github.com/Rizal-Saidul/bookshelf-api',
+                    borderColor: 'hover:border-accent/50',
+                    hoverColor: 'group-hover:text-accent'
+                },
+            ],
+            frontend: [
+                {
+                    id: 3,
+                    title: 'LKPD prisma',
+                    description: 'Interactive learning worksheet with modern HTML and CSS.',
+                    tech: { name: 'HTML Basic', color: 'text-orange-400' },
+                    badge: 'project',
+                    bgImage: 'from-orange-900',
+                    tags: ['HTML', 'CSS'],
+                    buttonText: 'View Demo',
+                    link: 'https://rizal-saidul.github.io/lkpd-prisma/',
+                    borderColor: 'hover:border-accent/50',
+                    hoverColor: 'group-hover:text-accent'
+                },
+                {
+                    id: 4,
+                    title: 'Desa Ngadireso',
+                    description: 'Comprehensive Village Information System dashboard.',
+                    tech: { name: 'wordpress', color: 'text-blue-400' },
+                    bgImage: 'from-indigo-900',
+                    tags: ['WordPress', 'CMS'],
+                    buttonText: 'Live website',
+                    link: 'https://ngadireso.com/',
+                    borderColor: 'hover:border-secondary/50',
+                    hoverColor: 'group-hover:text-secondary'
+                },
+                {
+                    id: 5,
+                    title: 'website Tadris Matematika',
+                    description: 'Official website for Mathematics Education department.',
+                    tech: { name: 'wordpress', color: 'text-purple-400' },
+                    bgImage: 'from-purple-900',
+                    tags: ['WordPress', 'Education'],
+                    buttonText: 'Live Website',
+                    link: 'https://tm.uin-malang.ac.id/',
+                    borderColor: 'hover:border-secondary/50',
+                    hoverColor: 'group-hover:text-secondary'
+                }
+            ]
+        };
+
+        // Render Project Cards
+        function renderProjects(type) {
+            const projects = projectsData[type];
+            const panelId = type === 'backend' ? 'backend-panel' : 'frontend-panel';
+            const panel = document.getElementById(panelId);
+            
+            panel.innerHTML = projects.map(project => {
+                if (type === 'backend') {
+                    return `
+                        <article class="group relative bg-card rounded-2xl overflow-hidden border border-slate-700 ${project.borderColor} transition duration-300 hover:-translate-y-1">
+                            <div class="h-40 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center relative overflow-hidden">
+                                <span class="text-6xl opacity-10 font-bold select-none">${project.badge}</span>
+                                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"></div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h3 class="text-xl font-bold text-white ${project.hoverColor} transition">${project.title}</h3>
+                                    <span class="text-xs font-mono px-2 py-1 rounded bg-slate-900 ${project.tech.color}">${project.tech.name}</span>
+                                </div>
+                                <p class="text-slate-400 text-sm mb-6 h-10 line-clamp-2">${project.description}</p>
+                                <div class="flex items-center justify-between pt-4 border-t border-slate-700">
+                                    <div class="flex gap-4 text-xs text-slate-500">
+                                        <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg> ${project.stats.stars}</span>
+                                        <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 5.5l5 4.5-5 4.5v-9z"/></svg> ${project.stats.forks}</span>
+                                    </div>
+                                    <a href="${project.link}" class="text-xs font-bold text-white bg-slate-700 px-3 py-1 rounded-full hover:bg-white hover:text-black transition">View Code</a>
+                                </div>
+                            </div>
+                        </article>
+                    `;
+                } else {
+                    return `
+                        <article class="group relative bg-card rounded-2xl overflow-hidden border border-slate-700 ${project.borderColor} transition duration-300 hover:-translate-y-1">
+                            <div class="h-40 bg-gradient-to-br ${project.bgImage} to-slate-800 flex items-center justify-center relative overflow-hidden">
+                                <div class="absolute inset-0 bg-[url('${project.bgUrl}')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition"></div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h3 class="text-xl font-bold text-white ${project.hoverColor} transition">${project.title}</h3>
+                                    <span class="text-xs font-mono px-2 py-1 rounded bg-slate-900 ${project.tech.color}">${project.tech.name}</span>
+                                </div>
+                                <p class="text-slate-400 text-sm mb-6 h-10 line-clamp-2">${project.description}</p>
+                                <div class="flex items-center justify-between pt-4 border-t border-slate-700">
+                                    <div class="flex gap-2">
+                                        ${project.tags.map(tag => `<span class="px-2 py-1 rounded text-[10px] bg-slate-800 border border-slate-600">${tag}</span>`).join('')}
+                                    </div>
+                                    <a href="${project.link}" class="text-xs font-bold text-white bg-slate-700 px-3 py-1 rounded-full hover:bg-white hover:text-black transition">${project.buttonText}</a>
+                                </div>
+                            </div>
+                        </article>
+                    `;
+                }
+            }).join('');
+        }
+
+        // Switch Tab Function
         function switchTab(tab) {
             const backendPanel = document.getElementById('backend-panel');
             const frontendPanel = document.getElementById('frontend-panel');
@@ -266,26 +310,22 @@
             const btnFrontend = document.getElementById('btn-frontend');
 
             if (tab === 'backend') {
-                // Show Backend
                 backendPanel.classList.remove('hidden');
                 backendPanel.classList.add('grid');
                 frontendPanel.classList.add('hidden');
                 frontendPanel.classList.remove('grid');
 
-                // Style Buttons
                 btnBackend.classList.add('bg-accent', 'text-deep', 'shadow-lg');
                 btnBackend.classList.remove('text-slate-400', 'hover:text-white');
                 
                 btnFrontend.classList.remove('bg-accent', 'text-deep', 'shadow-lg');
                 btnFrontend.classList.add('text-slate-400', 'hover:text-white');
             } else {
-                // Show Frontend
                 frontendPanel.classList.remove('hidden');
                 frontendPanel.classList.add('grid');
                 backendPanel.classList.add('hidden');
                 backendPanel.classList.remove('grid');
 
-                // Style Buttons
                 btnFrontend.classList.add('bg-accent', 'text-deep', 'shadow-lg');
                 btnFrontend.classList.remove('text-slate-400', 'hover:text-white');
                 
@@ -293,6 +333,12 @@
                 btnBackend.classList.add('text-slate-400', 'hover:text-white');
             }
         }
+
+        // Initialize projects on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjects('backend');
+            renderProjects('frontend');
+        });
     </script>
 </body>
 </html>
